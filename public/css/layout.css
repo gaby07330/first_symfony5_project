@@ -1,0 +1,430 @@
+/* ---------------------------------------/
+/--- layout.css: grids, les composants ---/
+/----------- Base smatphones -------------/
+/----------------------------------------*/
+ 
+ /* 
+ /-------   Row  ---------/
+*/
+.row {
+	clear: both;
+	margin: auto;	
+	width: 90%;
+}
+
+.row_narrow{
+	/*test*/
+	/*border:solid black;*/
+}
+
+.row_medium{
+	/*border:solid lime;*/
+}
+
+ /* 
+ /------ Containers ------/  
+*/
+#page{
+	width: 100%;
+}
+
+header{
+	width: 100%;
+	margin: 0;
+	height: 120px;
+	background-image: url(../img/marbre.jpg);
+	background-color: #c7c5d2;
+}
+
+/* ------- CONTENU -------- */
+#content{
+	overflow: hidden;
+	background-color: green;
+}
+
+.container_narrow{
+	text-align: justify;
+}
+
+.container_medium img{
+	border-radius: 10px;
+	box-shadow: 2px 2px 70px black;
+}
+
+.container_wide{
+	margin: 30px auto 0px;
+	height: fit-content;
+	overflow: hidden;
+	border-radius: 10px;
+	box-shadow: 2px 2px 70px black;
+}
+
+/* ------- SIDEBAR --------- */
+#sidebar{
+
+	width: 90%;
+	margin: 10px auto;
+
+	/* test */
+	/*border:solid red;*/
+	box-shadow:1px 6px 31px #eea817;
+	background-color: #ffffff66;
+}	
+
+/* --------ARTICLE ---------- */
+#article{
+
+	width: 90%;
+	margin: 10px auto;
+	/* test */
+
+}
+.recipe{
+	box-shadow:1px 6px 31px #eea817;
+	background-color: #ffffff66; 
+	margin: 20px 10px !important;
+	overflow: hidden;
+}
+.litle_picture{
+	width: 180px;
+	margin: auto;
+	padding: 10px;
+}
+.litle_picture img{
+	box-shadow: 1px 6px 30px black;
+}
+
+.description{
+	margin: 10px auto;
+	/*height: 200px;*/
+	text-align: center;
+	overflow: hidden;
+}
+.description li{
+	margin: auto;
+}
+
+.description ul{
+	padding: 0;
+	line-height: 30px;
+}
+
+
+
+
+/* ------- FOOTER -------- */
+footer{
+	height: 100px;
+	background:url(../img/ardoise.jpg);
+}
+
+.message_fin{
+	text-align: center;
+	padding: 6px;
+	font-family: Brush Script MT, Brush Script Std, cursive , sans-serif;
+}
+.message_fin a {
+	font-size: 2em;
+	color:white;
+	text-shadow: -1px -2px 2px #f9ac04;
+}
+.copyright{
+	margin: 10px auto;
+	float: left;
+	color: white;
+	font-size: 0.8em;
+}
+.ul_rs{
+	float: right;
+	width: 160px;
+	margin: 0 auto;
+}
+
+.li_rs{
+	display: inline-block;
+	height: 32px;
+	width: 32px;
+	margin: 2px;
+	border-radius: 8px; 
+}
+
+ /*
+ /----------------------Spécificité responsive------------------/
+*/
+
+ /*	
+ /----- Smartphone paysage + tablette portrait ----/
+*/
+@media all and (min-width:480px ) and (max-width:959px ) {
+
+	header{
+		height: 160px;
+	}
+
+	.header_center{
+		font-size: 15px;
+	}
+
+	.row_narrow{
+
+	    margin: 20px auto;
+	}
+
+	.row_medium{
+	    width: 80%;
+	    min-width: 400px;
+	    margin: auto;
+	}
+
+	.container_medium{
+		width: 400px;
+	}
+
+	.litle_picture{
+		width: 250px;
+	}
+	.description {
+		margin: auto!important;
+	}
+	/* --- footer ---- */
+
+	footer{
+	height: 140px;
+	}
+	.message_fin{
+		padding: 10px;
+	}
+	.message_fin a {
+		font-size: 2.5em;
+
+	}
+	.copyright{
+		margin: 25px auto;
+		font-size: 1em;
+	}
+	.li_rs{
+		height: 48px;
+		width: 48px;
+		margin: 2px;
+		border-radius: 12px; 
+	}
+	.ul_rs{
+		width: 280px;
+	}
+
+
+}/* EO Smartphone paysage + tablette portrait */
+ 
+ /*	
+ /------- Tablette paysage + petit pc ---------/
+*/
+@media all and (min-width:960px ) and (max-width:1280px ) {
+
+
+
+	header{
+		height: 270px;
+	}
+
+	/* ----- row ------*/
+	.row_wide{
+		padding: 1%;
+	}
+
+	.row_narrow{
+	   /* margin: 2%;*/
+	    /*width: 400px;*/
+	}
+
+	.row_medium{
+	    width: 46%;
+	    min-width: none;	    	
+	}
+
+	/* -------- container ---------- */
+
+	#page{
+		max-width: 1150px;
+		margin: auto;
+	}
+
+	#sidebar{
+		float: right;
+		width: 25%;
+		margin-right: 2%; 
+	}
+
+	#article{
+		float: left;
+		width: 70%;
+		margin-left: 1%;
+	}
+
+	.litle_picture{
+		width: 210px;
+		margin: 10px;
+		float: left;
+	}
+	.input_container{
+		margin-top: 35px;
+	}
+
+/*	.description{
+		height: 165px;
+	}*/
+
+
+/* ---- Page accueil --------*/
+	.article_left{
+		float: left;
+		margin: 0% 0 0 2%;
+	}
+
+	.aside_right{
+		float: right;
+		margin: 0% 2% 0 0;
+	}
+
+	.article_right{
+		float: right;
+		margin: 0% 2% 0 0;
+	}
+	.aside_left{
+		float: left;
+		margin: 0% 0 0 2%;
+	}
+	.container_medium img{
+		width: 400px;
+	}
+
+	/* ------ footer ----------*/
+	footer{
+	height: 150px;
+	}
+
+	.message_fin a {
+		font-size: 3.5em;
+
+	}
+	.copyright{
+		margin: 30px;
+		font-size: 1.4em;
+	}
+
+	.li_rs{
+		height: 58px;
+		width: 58px;
+		margin: 2px;
+		border-radius: 14px; 
+	}
+	.ul_rs{
+		width: 300px;
+	}
+
+} /* EO Tablette paysage + petit pc */
+
+ /*	
+ /---------- Grand pc + Tv ---------/
+*/
+@media all and (min-width: 1281px ){
+
+
+
+	header{
+		height: 300px;
+	}
+
+
+	.row_medium{
+	    width: 46%;
+	    min-width: none;
+	    margin: 2% 2% 0 0;   	
+	}
+
+
+	/* -------- container ---------- */
+
+	#page{
+		max-width: 1700px;
+		margin: auto;
+	}
+
+	#sidebar{
+		float: right;
+		width: 25%;
+		margin-right: 2%;
+	}
+
+	#article{		
+		float: left;
+		width: 70%;
+		margin-left: 1%;
+	}
+
+	.container_narrow{
+		text-align: justify;
+		padding: 2% 0;
+	}
+
+	.litle_picture{
+		width: 230px;
+		margin: 10px;
+		float: left;
+
+	}
+
+	.input_container{
+		margin-top: 35px;
+	}
+
+	/* ------- Page accueil ---------- */
+	.article_left{
+		float: left;
+		margin: 2% 0 2% 2%;
+	}
+
+	.aside_right{
+		float: right;
+		margin: 2% 2% 2% 0;
+	}
+
+	.article_right{
+		float: right;
+		margin: 2% 2% 2% 0;
+	}
+
+	.aside_left{
+		float: left;
+		margin: 2% 0 2% 2%;
+	}
+
+	/* ---------- footer ----------- */
+	footer{
+	height: 150px;
+	}
+
+	.message_fin a {
+		font-size: 3em;
+
+	}
+	.copyright{
+		margin: 30px auto;
+		font-size: 1.5em;
+	}
+
+	.li_rs{
+		display: inline-block;
+		height: 58px;
+		width: 58px;
+		margin: 2px;
+		border-radius: 14px; 
+	}
+
+	.ul_rs{
+		float: right;
+		width: 300px;
+	}
+
+
+
+}/* EO Grand pc + Tv 
