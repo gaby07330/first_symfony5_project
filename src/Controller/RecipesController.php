@@ -36,6 +36,21 @@ class RecipesController extends AbstractController
 
         $form = $this->createForm(RecipeType::class, $recipe);
 
+        $form->handleRequest(($request));
+
+        if($form->isSubmitted() && $form->isValid()){
+
+            $recipe->setCreatedAt(new \DateTime());
+            echo $recipe->getName();
+
+            // Message Flash Success
+            $this->addFlash(
+                'success',
+                'Merci pour votre recette ! ');
+
+            return $this->redirectToRoute('recipes');
+        }
+
         return $this->render('recipes/new.html.twig', [
             'form'=> $form->createView(),
         ]);

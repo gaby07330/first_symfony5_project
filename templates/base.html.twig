@@ -46,8 +46,11 @@
     <meta name="msapplication-wide310x150logo" content="assets/img/icon/ms-icon-310x150.png">
     <meta name="msapplication-square150x150logo" content="assets/img/icon/ms-icon-150x150.png">
     <meta name="msapplication-square70x70logo" content="assets/img/icon/ms-icon-70x70.png">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"> 
     <!-- CSS links -->
     {% block stylesheets %}
+
         <link rel="stylesheet" href="/css/base.css">
         <link rel="stylesheet" href="/css/layout.css">
         <link rel="stylesheet" href="/css/modules.css">
@@ -79,7 +82,7 @@
                             <span class="bar bottom"></span>
                         </label>
                         <nav class="header_nav nav-collapse" id="nav_float" role="navigation">
-                            <a href="#"><img src="assets/img/logo_mufin.png"></a>
+                            <a href="#"><img src="/img/logo_mufin.png"></a>
                             <ul id="ul_list" >
                                 <li><a href="{{path ('home')}}" class="li_a current">Accueil</a></li>
                                 <li><a href="{{path ('recipes')}}" class="li_a">Recettes</a></li>
@@ -102,7 +105,17 @@
 
 
             <div id="content">
+                {% for label, messages in app.flashes  %}
+                        <div class="container mt-5">
+                            <div class="alert alert-{{ label }}">
+                                {% for message in messages %}
+                                    <p style="text-align:center; padding-top:2%">{{ message | raw }}</p>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endfor %}
 
+                    
                 {% block body %}{% endblock %}
 
             </div><!-- EO content -->

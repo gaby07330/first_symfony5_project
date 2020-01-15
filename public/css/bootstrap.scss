@@ -1,0 +1,9 @@
+// public/css/bootstrap.scss
+
+
+// the ~ allows you to reference things in node_modules
+@import "~bootstrap/scss/bootstrap";
+
+.container-fluid{
+	background-color: red!important;
+}

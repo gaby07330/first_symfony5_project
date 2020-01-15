@@ -1,8 +1,27 @@
 {% extends 'base.html.twig' %}
-{% block title %}Nouvelle recette {% endblock %}
+{% block title %}Nouvelle recette{% endblock %}
 {% block body %}
 
-{{ form(form)}}
+<div class="container">
+    {{ form_start(form) }}
 
+
+
+        {{form_row(form.author)}}
+
+
+
+        {{form_row(form.name)}}
+
+
+        {{form_row(form.step)}}
+
+
+
+        {{form_widget(form.Confirmer ) }}
+
+
+    {{ form_end(form) }}
+</div>
 
 {% endblock %}
