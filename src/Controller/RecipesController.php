@@ -8,9 +8,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 use Doctrine\ORM\EntityManagerInterface;
 
-
-
-
 use App\Form\RecipeType;
 use App\Entity\Recipes;
 
@@ -21,8 +18,11 @@ class RecipesController extends AbstractController
      */
     public function index()
     {
+        $repository = $this->getDoctrine()->getRepository(Recipes::class);
+        $recipes = $repository->findAll();
+
         return $this->render('recipes/index.html.twig', [
-            'controller_name' => 'RecipesController',
+            'recipes' => $recipes,
         ]);
     }
 
@@ -78,8 +78,12 @@ class RecipesController extends AbstractController
      */
     public function recipe($recipeId)
     {
+
+        $repository = $this->getDoctrine()->getRepository(Recipes::class);
+        $recipe = $repository->find($recipeId);
+
         return $this->render('recipes/recipe.html.twig', [
-            'recipe'=> $recipeId
+            'recipe'=> $recipe
         ]);
     }
 

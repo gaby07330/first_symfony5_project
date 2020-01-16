@@ -4,6 +4,29 @@
 
 <h1> Page qui affichera toutes les recettes </h1>
 
+
+{% for recipe in recipes %}
+<a href="{{path('recipe', {recipeId: recipe.id})}}">
+
+	<div class="container mt-4">
+	<div class="card border-primary mb-3" style="">
+
+	<div class="card-header">{{recipe.name}} écris par {{recipe.author}} </div>
+
+	<div class="card-body">
+		<div>{{recipe.id}}</div>
+
+
+	  <p class="card-text">{{recipe.step}}</p>
+	</div>
+	</div>
+	</div>
+
+</a>
+{% endfor %}
+
+
+
 <a href="{{path ('recipeNew')}}">+++++</a>
 
 

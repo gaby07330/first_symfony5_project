@@ -2,9 +2,20 @@
 {% block title %}Home{% endblock %}
 {% block body %}
 
-<h1>Page qui affichera les détails d'une recette {{recipe}}</h1>
 
 
+<div class="container mt-4">
+  <div class="card border-primary mb-3" style="">
+
+    <div class="card-header">{{recipe.name}} écris par {{recipe.author}} </div>
+
+    <div class="card-body">
+
+
+      <p class="card-text">{{recipe.step}}</p>
+    </div>
+  </div>
+</div>
 
 
 {% endblock %}
